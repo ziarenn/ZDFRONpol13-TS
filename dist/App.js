@@ -41,9 +41,33 @@ const render = (todos) => {
             todo.done ? (todo.done = false) : (todo.done = true);
         });
     });
+    // 5. Na input z pkt 4 nałóż event listener (click)
+    // W środku EL:
+    // 6. Jeżeli własność done aktulanego elementu ma wartość true, to ustaw ją na false, jeżeli ma false to ustaw true
 };
-render(todos);
+// 1. Stwórz funkcję renderCategories
+// W renderCategories:
+// 2. Wybierz ul (klasa "categories")
+// 3. Na arrayu categories (na górze) wywołujecie forEach (parametr: category (typ: Category))
+// 4. Stwórz element <li>
+// 5. Stwórz element <input>, type "radio", name "category", value na parametr category z forEacha, podepnij input do li (pkt 4)
+// 6. Stwórz element <label>, textContent na category (parametr forEacha), podepnij label do li (pkt 4)
+// 7. Do ula z pkt 2 podepnij li
+const renderCategories = () => {
+    const categoryContainer = document.querySelector(".categories");
+    categories.forEach((category) => {
+        const li = document.createElement("li");
+        const input = document.createElement("input");
+        input.setAttribute("type", "radio");
+        input.setAttribute("name", "category");
+        input.setAttribute("value", category);
+        li.appendChild(input);
+        const label = document.createElement("label");
+        label.textContent = category;
+        li.appendChild(label);
+        categoryContainer.appendChild(li);
+    });
+};
+renderCategories();
 export {};
-// 5. Na input z pkt 4 nałóż event listener (click)
-// W środku EL:
-// 6. Jeżeli własność done aktulanego elementu ma wartość true, to ustaw ją na false, jeżeli ma false to ustaw true
+// Po klinięciu na button "Add" ma zostać dodany todos. Ściągnij text z inputu textowego i kategorie z radio inputów. Sam todos powinien przybrać formę obiektu klasy Todo. Ma zostać spushowany do listy todos oraz ma zostać wyrenderowany (przez wywołanie funkcji render)
