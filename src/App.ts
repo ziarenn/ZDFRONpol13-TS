@@ -86,24 +86,65 @@
 //type Person = { name: string; surname: string; age: number };
 
 // b) interface
-interface Person {
-  name: string;
-  surname: string;
-  age: number;
-}
+// interface Person {
+//   name: string;
+//   surname: string;
+//   age: number;
+// }
 
-interface Person2 extends Person {
-  married: boolean;
-}
-const person: Person = {
-  name: "John",
-  surname: "Smith",
-  age: 30,
-};
+// interface Person2 extends Person {
+//   married: boolean;
+// }
+// const person: Person = {
+//   name: "John",
+//   surname: "Smith",
+//   age: 30,
+// };
 
-const person2: Person2 = {
-  name: "Sara",
-  surname: "Smith",
-  age: 30,
-  married: true,
-};
+// const person2: Person2 = {
+//   name: "Sara",
+//   surname: "Smith",
+//   age: 30,
+//   married: true,
+// };
+
+// 7. TYPOWANIE LIST
+// const numbers: (number | string)[] = [1, 2, 3, "3", 4, 5];
+// const persons: (Person | Person2)[] = [
+//   {
+//     name: "Sara",
+//     surname: "Smith",
+//     age: 30,
+//     married: true,
+//   },
+//   {
+//     name: "John",
+//     surname: "Smith",
+//     age: 30,
+//   },
+// ];
+
+// APLIKACJA - TODO LIST TYPESCRIPT
+
+// 1. Wybierz liste ul (klasa todos)
+// 2. Stwórz listę z kategoriami todosów.
+const categories = ["life", "work", "sport", "education"];
+// Otypuj odpowiednio listę categories (użyj typu Category)
+// 3. Otypuj odpowiednio listę todos (stwórz interfejs Todo dla obiektów w środku listy)
+const todos  = [
+  {
+    title: "Wyrzucić śmieci",
+    done: false,
+    category: "life",
+  },
+  {
+    title: "Pójść na siłke",
+    done: true,
+    category: "sport",
+  },
+  {
+    title: "Nakarmić psa",
+    done: false,
+    category: "work",
+  },
+];
