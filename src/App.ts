@@ -44,6 +44,9 @@ const categoryList: HTMLUListElement = document.querySelector(".categories");
 
 button.addEventListener("click", () => {
   // 1. W jakiś sposób wylosuj czy użytkownik ma zniżke czy nie i zapisz do zmiennej true albo false
+  const hasDiscount = Math.random() > 0.5 ? true : false;
   // 2. Ściągnij wartość z inputu textowego (id "name").
+  const price = +document.querySelector("input").value;
   // 3. Wykonaj console loga `You have to pay *tu cena, która jest wynikiem wywołania calculatePrice*`
+  console.log(`You have to pay ${calculatePrice(price, hasDiscount)}`);
 });
